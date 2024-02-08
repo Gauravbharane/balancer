@@ -1,31 +1,16 @@
 ---
 # tasks file for balancer
-
 - name:
-  
   package:
-    
-       name: haproxy
-    
-       state: present
-
-
-- name: 
-  
-   template:
-   
-       src: haproxy.j2
-    
-       dest: /etc/haproxy/haproxy.cfg
-  
-   notify: restarted 
-
+    name: haproxy
+    state: present
 - name:
-  load balancer
-   service:
-    
-     name: haproxy
-    
-     state: started
-    
-     enabled: yes
+  template:
+    src: haproxy.j2
+    dest: /etc/haproxy/haproxy.cfg
+   notify: restarted 
+- name: load balancer
+  service:
+    name: haproxy
+    state: started
+    enabled: yes
