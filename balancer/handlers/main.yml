@@ -5,3 +5,4 @@
   service:
     name: haproxy
     state: restarted
+    enabled: yes
