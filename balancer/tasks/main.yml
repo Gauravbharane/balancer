@@ -8,7 +8,7 @@
   template:
     src: haproxy.j2
     dest: /etc/haproxy/haproxy.cfg
-   notify: restarted load balancer
+   notify: restarted
 - name: load balancer
   service:
     name: haproxy
